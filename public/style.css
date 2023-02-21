@@ -1,40 +1,54 @@
-* {margin: 0px;padding: 0px;}
-html,body {width: 100%;height: 100%;}
+.gradient {
+    background: linear-gradient(to right, #ff5f5c, #2eadfd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-.playing-card {
-    background: transparent;
-    width: 240px;
-    height: 340px;
-    display: inline-block;
-    margin: 10px;
-    perspective: 1000px;
+body {
+    font-family: 'Montserrat', cursive;
 }
-.flip-card {
-    position: relative;
-    width: 100%;
+.wrapper {
+    font-size: large;
+    box-sizing: content-box;
+    background-color: #ffffff;
+    height: 30px;
+    padding: 10px 10px;
+    display: flex;
+    border-radius: 8px;
+}
+
+.words{
+    overflow: hidden;
+}
+
+span {
+    display: block;
     height: 100%;
-    border-radius: 20px;
-    transition: transform .8s;
-    transform-style: preserve-3d;
+    animation: spin_words 6s infinite;
 }
-.playing-card:hover .flip-card {
-    transform: rotateY(-180deg);
-}
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
-    backface-visibility: hidden;
-}
-.card-front {
-    transform: rotateY(180deg);
-}
-.card-back {
-    
-}
-.card-front img, .card-back img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+@keyframes spin_words {
+    10%{
+        transform: translateY(-112%);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    35% {
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
 }
